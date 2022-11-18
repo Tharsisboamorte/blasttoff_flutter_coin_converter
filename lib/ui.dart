@@ -13,9 +13,9 @@ class UiHome extends StatefulWidget {
   @override
   State<UiHome> createState() => _UiHomeState();
 }
-double real = 0.0;
+
 double dolar = 0.0;
-double euro = 0.0;
+double euroServer = 0.0;
 double bitcoin = 0.0;
 
 class _UiHomeState extends State<UiHome> {
@@ -27,29 +27,29 @@ class _UiHomeState extends State<UiHome> {
   void _realChanged(String text) {
     double real = double.parse(text);
     dolarController.text = (real * dolar).toStringAsFixed(2);
-    euroController.text = (real * euro).toStringAsFixed(2);
+    euroController.text = (real * euroServer).toStringAsFixed(2);
     bitcoinController.text = (real / bitcoin).toStringAsFixed(7);
   }
 
   void _dolarChanged(String text) {
-    double dolar = double.parse(text);
-    realController.text = (dolar * dolar).toStringAsFixed(2);
-    euroController.text = (dolar * dolar / euro).toStringAsFixed(2);
-    bitcoinController.text = (dolar * dolar / bitcoin).toStringAsFixed(2);
+    double dollar = double.parse(text);
+    realController.text = (dolar * dollar).toStringAsFixed(2);
+    euroController.text = (dolar * dollar / euroServer).toStringAsFixed(2);
+    bitcoinController.text = (dolar * dollar / bitcoin).toStringAsFixed(7);
   }
 
   void _euroChanged(String text) {
     double euro = double.parse(text);
-    realController.text = (euro * euro).toStringAsFixed(2);
-    dolarController.text = (euro * euro / dolar).toStringAsFixed(2);
-    bitcoinController.text = (euro * euro / bitcoin).toStringAsFixed(2);
+    realController.text = (euro * euroServer).toStringAsFixed(2);
+    dolarController.text = (euro * euroServer / dolar).toStringAsFixed(2);
+    bitcoinController.text = (euro * euroServer / bitcoin).toStringAsFixed(7);
   }
 
   void _bitcoinChanged(String text) {
     double bitcoin = double.parse(text);
-    realController.text = (bitcoin * real).toStringAsFixed(2);
+    realController.text = (bitcoin * bitcoin).toStringAsFixed(2);
     dolarController.text = (bitcoin * bitcoin / dolar).toStringAsFixed(2);
-    euroController.text = (bitcoin * bitcoin / euro).toStringAsFixed(2);
+    euroController.text = (bitcoin * bitcoin / euroServer).toStringAsFixed(2);
   }
 
 

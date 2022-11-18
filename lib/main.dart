@@ -47,7 +47,7 @@ class _HomeState extends State<Home> {
                 );
               } else {
                 dolar = snapshot.data!["results"]["currencies"]["USD"]["buy"];
-                euro = snapshot.data!["results"]["currencies"]["EUR"]["buy"];
+                euroServer = snapshot.data!["results"]["currencies"]["EUR"]["buy"];
                 bitcoin = snapshot.data!["results"]["currencies"]["BTC"]["buy"];
 
                 return UiHome();
